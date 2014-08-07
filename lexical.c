@@ -1,5 +1,5 @@
-/*Write as program to implement lexiacal analysis*/
-#include<stdioh>
+/*Write as program to implement lexical analysis*/
+#include<stdio.h>
 void main()
 {
         char st[50];
