@@ -6,12 +6,13 @@
 #include<stdio.h>
 void main()
         {
-            char st[50];
+            char *st;
+			st= (char *) malloc(100);
             int index,_temp;
-            scanf("%s",&st);
+            gets(st);
             for(index=0;st[index]!='\0';index++)
                 {
-                    if((st[index]>='a' && st[index]<='z') || (st[_temp+1]>='A' && st[_temp+1]<='Z') )
+                    if((st[index]>='a' && st[index]<='z') || (st[_temp]>='A' && st[_temp]<='Z') )
                         {
                             _temp=index;
                             printf("\n %c",st[index]);
@@ -54,7 +55,7 @@ void main()
                                 }
 
                         }
-                    else
+                    else if(st[index]==' ')
                         {
                         
                         }
@@ -63,6 +64,6 @@ void main()
 
                 }
        
-		} 
+    	} 
 	   
 	 
