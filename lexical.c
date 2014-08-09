@@ -1,25 +1,27 @@
 /*Write as program to implement lexical analysis
  *Written for the first LAB of the subject Compiler Design
- * Author@bhaveshsgupta
+ *This program still analysis small line that too only with few characteristic 
+ * Author@BhaveshSGupta
  *
  */
 #include<stdio.h>
 #include<stdlib.h>
 void main()
-        {
+		{
             char *string;
-    		string= (char *) malloc(100);
-            int index;
-            gets(string);
-            for(index=0;string[index]!='\0';index++)
-                {
-				int _temp;
-                    if((string[index]>='a' && string[index]<='z') || (string[_temp]>='A' && string[_temp]<='Z') )
+			int index;
+    		string	= (char *) malloc(100);/*Dynamic allocation for memory management*/
+			printf("Enter the String on which you need to do the Lexical analysis")
+			gets(string);
+            for(index=0;string[index]!='\0';index++)/*The loop to check whether the End of String or Not*/
+				{
+					int _temp;
+					if((string[index]>='a' && string[index]<='z') || (string[_temp]>='A' && string[_temp]<='Z') )/*For Identifier analysis as a rule a identifier should always start with a letter and could consist numbers also*/
                         {
                             _temp=index;
                             printf("\n %c",string[index]);
-                            check1:
-                            if((string[_temp+1]>='a' && string[_temp+1]<='z')||(string[_temp+1]>='A' && string[_temp+1]<='Z') || (string[_temp+1]>='0' && string[_temp+1]<='9'))
+                            check1: /*using label */
+                            if((string[_temp+1]>='a' && string[_temp+1]<='z')||(string[_temp+1]>='A' && string[_temp+1]<='Z') || (string[_temp+1]>='0' && string[_temp+1]<='9'))/*To check the next letter in array is alphanumeric or not*/
                                 {
                                     _temp=_temp+1;
                                     printf("%c",string[_temp]);
