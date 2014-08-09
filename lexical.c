@@ -4,10 +4,11 @@
  *
  */
 #include<stdio.h>
+#include<stdlib.h>
 void main()
         {
             char *st;
-			st= (char *) malloc(100);
+    		st= (char *) malloc(100);
             int index,_temp;
             gets(st);
             for(index=0;st[index]!='\0';index++)
@@ -31,11 +32,11 @@ void main()
                         }
                     else if(st[index]=='=')
                         {
-                            printf("\n %c is assignment operator \n",st[index]);
+                            printf("\n %c is Assignment Operator \n",st[index]);
                         }
                     else if(st[index]=='*' || st[index]=='/' || st[index]=='-'|| st[index]=='+'|| st[index]=='%')
                         {
-                            printf("\n %c is arthematic operator \n",st[index]);
+                            printf("\n %c is Arithmetic Operator \n",st[index]);
                         }
                     else if(st[index]>='0' && st[index]<='9')
                         {
@@ -59,11 +60,13 @@ void main()
                         {
                         
                         }
+                    else
+                    {
+                        printf("\nWe are Developing soon there will be an update");                        
+                    }
 
 
 
                 }
        
-    	} 
-	   
-	 
+    	}
