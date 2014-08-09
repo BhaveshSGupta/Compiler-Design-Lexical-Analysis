@@ -7,21 +7,22 @@
 #include<stdlib.h>
 void main()
         {
-            char *st;
-    		st= (char *) malloc(100);
-            int index,_temp;
-            gets(st);
-            for(index=0;st[index]!='\0';index++)
+            char *string;
+    		string= (char *) malloc(100);
+            int index;
+            gets(string);
+            for(index=0;string[index]!='\0';index++)
                 {
-                    if((st[index]>='a' && st[index]<='z') || (st[_temp]>='A' && st[_temp]<='Z') )
+				int _temp;
+                    if((string[index]>='a' && string[index]<='z') || (string[_temp]>='A' && string[_temp]<='Z') )
                         {
                             _temp=index;
-                            printf("\n %c",st[index]);
+                            printf("\n %c",string[index]);
                             check1:
-                            if((st[_temp+1]>='a' && st[_temp+1]<='z')||(st[_temp+1]>='A' && st[_temp+1]<='Z') || (st[_temp+1]>='0' && st[_temp+1]<='9'))
+                            if((string[_temp+1]>='a' && string[_temp+1]<='z')||(string[_temp+1]>='A' && string[_temp+1]<='Z') || (string[_temp+1]>='0' && string[_temp+1]<='9'))
                                 {
                                     _temp=_temp+1;
-                                    printf("%c",st[_temp]);
+                                    printf("%c",string[_temp]);
                                     goto check1;
                                 }
                             else
@@ -30,23 +31,23 @@ void main()
                                     index=_temp;
                                 }
                         }
-                    else if(st[index]=='=')
+                    else if(string[index]=='=')
                         {
-                            printf("\n %c is Assignment Operator \n",st[index]);
+                            printf("\n %c is Assignment Operator \n",string[index]);
                         }
-                    else if(st[index]=='*' || st[index]=='/' || st[index]=='-'|| st[index]=='+'|| st[index]=='%')
+                    else if(string[index]=='*' || string[index]=='/' || string[index]=='-'|| string[index]=='+'|| string[index]=='%')
                         {
-                            printf("\n %c is Arithmetic Operator \n",st[index]);
+                            printf("\n %c is Arithmetic Operator \n",string[index]);
                         }
-                    else if(st[index]>='0' && st[index]<='9')
+                    else if(string[index]>='0' && string[index]<='9')
                         {
                             _temp=index;
-                            printf("\n %c",st[index]);
+                            printf("\n %c",string[index]);
                             check:
-                            if(st[_temp+1]>='0' && st[_temp+1]<='9')
+                            if(string[_temp+1]>='0' && string[_temp+1]<='9')
                                 {
                                     _temp=_temp+1;
-                                    printf("%c",st[_temp]);
+                                    printf("%c",string[_temp]);
                                     goto check;
                                 }
                             else
@@ -56,17 +57,18 @@ void main()
                                 }
 
                         }
-                    else if(st[index]==' ')
+                    else if(string[index]==' ')
                         {
                         
                         }
                     else
                     {
-                        printf("\nWe are Developing soon there will be an update");                        
+                        printf("\n We are Developing soon there will be an update");                        
                     }
 
 
 
                 }
+		free(string);
        
     	}
