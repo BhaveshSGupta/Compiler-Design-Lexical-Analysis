@@ -7,19 +7,27 @@
 #include<stdlib.h>
 void main()
 		{
-            char *String;
+            char *String,*key;
 			int index;
     		String	= (char *) malloc(100);/*Dynamic allocation for memory management*/
 			printf("Enter the String on which you need to do the Lexical \n");
 			gets(String);
             for(index=0;String[index]!='\0';index++)/*The loop to check whether the End of String or Not*/
 				{
-					int _temp;
-					if((String[index]>='a' && String[index]<='z') || (String[_temp]>='A' && String[_temp]<='Z') )/*For Identifier analysis as a rule a identifier should always start with a letter and could consist numbers also*/
+					int _temp,_temp1,_temp2=0;
+					if((String[index]>='a' && String[index]<='z') || (String[index]>='A' && String[index]<='Z') )/*For Identifier analysis as a rule a identifier should always start with a letter and could consist numbers also*/
                         {
                             _temp=index;
+							
+							_temp1=index-1;
                             printf("\n %c",String[index]);
-                            check1: /*using label */
+							
+							while(String[_temp1+1]>='a' && String[_temp1+1]<='z')
+								{
+								_temp1++;
+								_temp2++;
+								}
+                            check1: /*using label */ 
                             if((String[_temp+1]>='a' && String[_temp+1]<='z')||(String[_temp+1]>='A' && String[_temp+1]<='Z') || (String[_temp+1]>='0' && String[_temp+1]<='9'))/*To check the next letter in array is alphanumeric or not*/
                                 {
                                     _temp=_temp+1;
